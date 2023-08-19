@@ -1,0 +1,24 @@
+.dummy_card {
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  height: auto;
+  width: 500px;
+  margin: 10px 0 10px 150px;
+}
+.dummy_card-img {
+  height: 200px;
+  width: 400px;
+  margin: 10px 45px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.dummy_card-title {
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+.dummy_card-text {
+  margin: 10px;
+  font-size: 17px;
+  font-family: "Times New Roman", Times, serif;
+}
