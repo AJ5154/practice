@@ -12,10 +12,6 @@ function App() {
         repudiandae? Sunt, repudiandae!'
       </p>
       <DummyCard />
-      <DummyCard />
-      <DummyCard />
-      <DummyCard />
-      <DummyCard />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./DummyCard.css";
+
 function DummyCard() {
   const [data, setData] = useState([]);
 
@@ -11,10 +12,12 @@ function DummyCard() {
   const getNewNews = () => {
     axios
       .get(
-        "https://newsapi.org/v2/everything?q=tesla&from=2023-07-19&sortBy=publishedAt&apiKey=eb72608b2f62483d83980969c871b0b3"
+        "https://gnews.io/api/v4/search?q=example&lang=en&country=pk&max=10&apikey=80ad10984b50944aaf52a052eb31ae04"
       )
       .then((response) => {
-        setData(response.data.articles);
+        if (response.data && response.data.articles) {
+          setData(response.data.articles);
+        }
       })
       .catch((error) => {
         console.error("Error fetching news:", error);
@@ -25,11 +28,7 @@ function DummyCard() {
     <div>
       {data.map((article, index) => (
         <div className="dummy_card" key={index}>
-          <img
-            className="dummy_card-img"
-            src={article.urlToImage}
-            alt="Article"
-          />
+          <img className="dummy_card-img" src={article.image} alt="Article" />
           <div className="card-body">
             <h5 className="dummy_card-title">{article.title}</h5>
             <p className="dummy_card-text">{article.description}</p>
